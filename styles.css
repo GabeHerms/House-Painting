@@ -1,0 +1,142 @@
+:root {
+  /* Sky */
+  --color-sky-light: #b3e6ff;
+
+  /* Grass */
+  --color-grass: green;
+
+  /* House */
+  --color-house-body: #ff9980;
+  --color-house-border: #b35900;
+
+  /* Roof */
+  --color-roof-tile: #b35900;
+  --color-roof-fill: #ff9980;
+  --color-roof-solid: green;
+
+  /* Chimney */
+  --color-chimney-light: #e6e6e6;
+  --color-chimney-dark: black;
+
+  /* Window */
+  --color-window-frame: #b35900;
+  --color-window-pane: #ffffb3;
+
+  /* Door */
+  --color-door: #e6e6e6;
+  --color-door-knob: #b35900;
+
+  /* Welcome sign */
+  --color-welcome-sign: #85e085;
+  --color-welcome-text: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+  var(--color-sky-light) 60%,
+  var(--color-grass) 60%
+  );
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    background-color: black;;
+}
+
+#house {
+  flex: 0 0 auto;
+  width: 500px;
+  height: 400px;
+  background-color: var(--color-house-body);
+  position: relative;
+  border: 6px solid var(--color-house-border);
+}
+
+#roof {
+  
+  width: 100%;
+  height:110px;
+  position: absolute;
+    top: 0;
+  border: 2px solid;
+
+  background: repeating-linear-gradient(
+    45deg, 
+    var(--color-roof-tile),
+    var(--color-roof-tile) 2%, 
+    transparent 2%,
+    transparent 5%
+  ),
+   repeating-linear-gradient(
+    -45deg, 
+    var(--color-roof-tile),
+    var(--color-roof-tile) 2%, 
+    transparent 2%,
+    transparent 5%
+  );
+  background-color: black;
+}
+
+#door{
+  width: 130px;
+  height: 180px;
+  background-color: var(--color-door);
+  position: absolute;
+  bottom: 0%;
+  left: 185px;
+  border: 6px solid var(--color-door-knob);
+  transform: translateY(6px);
+}
+
+#door-knob{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-door-knob);
+  border-radius: 50%;
+  top: 50%;
+  left: 85px;
+}
+
+#window-1, #window-2{
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(to right, 
+  var(--color-window-pane)48%,
+  var(--color-window-frame)48%,
+   var(--color-window-frame)52%,
+  var(--color-window-pane)52%
+  );
+  position: absolute;
+  top: 40%;
+  border: 6px solid var(--color-window-frame);
+    background-color: black;;
+}
+#window-1{
+  left: 7.5%;
+}
+
+#window-2{
+  right: 7.5%;
+}
+
+#chimney{
+  width: 90px;
+  height: 100px;
+  position: absolute;
+  background: repeating-linear-gradient(
+    var(--color-chimney-light),
+    var(--color-chimney-light) 10%,
+    var(--color-chimney-dark) 10%,
+    var(--color-chimney-dark) 12%
+  );
+  top: -100px;
+  left: 65%;
+  z-index: -1;
+  border: 6px solid;
+  background-color: gray;
+}
